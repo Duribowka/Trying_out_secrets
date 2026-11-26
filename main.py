@@ -9,3 +9,5 @@ load_dotenv()
 string = os.getenv("string")
 
 print("Hello " + string + "!")
+with open("test.txt", "a") as f:
+    f.write(string)
