@@ -6,6 +6,7 @@ load_dotenv()
 #harmless string for testing
 #and another one
 #mueheheheheh
+#hahaha
 string = os.getenv("string")
 
 print("Hello " + string + "!")
