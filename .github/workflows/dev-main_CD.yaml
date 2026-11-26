@@ -18,6 +18,6 @@ jobs:
 
       - name: Run secret
         env:
-          string: ${{ secrets.string }}
+          string: ${{ secrets.SECRET }}
         shell: bash
         run: python "/home/archuser/Desktop/Gthub-Secret/Server/Trying_out_secrets/main.py"
