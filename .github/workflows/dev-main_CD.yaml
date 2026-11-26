@@ -11,11 +11,11 @@ jobs:
 
     steps:
       - name: Update production
-        shell: kitty
+        shell: bash
         run: |
           git -C "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets" fetch origin
           git -C "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets" reset --hard origin/main
 
       - name: Run secret
-        shell: kitty
+        shell: bash
         run: python "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets/main.py"
