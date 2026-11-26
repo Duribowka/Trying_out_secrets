@@ -13,9 +13,11 @@ jobs:
       - name: Update production
         shell: bash
         run: |
-          git -C "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets" fetch origin
-          git -C "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets" reset --hard origin/main
+          git -C "/home/archuser/Desktop/Gthub-Secret/Server/Trying_out_secrets" fetch origin
+          git -C "/home/archuser/Desktop/Gthub-Secret/Server/Trying_out_secrets" reset --hard origin/main
 
       - name: Run secret
+        env:
+          string: ${{ secrets.string }}
         shell: bash
-        run: python "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets/main.py"
+        run: python "/home/archuser/Desktop/Gthub-Secret/Server/Trying_out_secrets/main.py"
