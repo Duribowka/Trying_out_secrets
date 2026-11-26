@@ -1,0 +1,21 @@
+name: dev to Main CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  launch:
+    runs-on: self-hosted
+
+    steps:
+      - name: Update production
+        shell: cmd
+        run: |
+          git -C "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets" fetch origin
+          git -C "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets" reset --hard origin/main
+
+      - name: Run secret
+        shell: cmd
+        run: python "/home/archuser/Desktop/Gthub-Secret/Dev/Trying_out_secrets/main.py"
